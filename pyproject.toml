@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "emaildnscheck"
+version = "1.0.0"
+description = "Email DNS Checker"
+authors = ["Jimmy Briggs <jimmy.briggs@noclocks.dev>"]
+readme = "README.md"
+packages = [{include = "emaildnscheck", from = "src"}]
+
+[tool.poetry.scripts]
+emaildnscheck = "emaildnscheck.cli:_main"
+
+
+[tool.poetry.dependencies]
+python = ">=3.10,<=3.13"
+dnspython = "^2.6.1"
+idna = "^3.7"
+checkdmarc = "^5.3.1"
+colorama = "^0.4.6"
+validators = "^0.28.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.4.3"
+
+
+[tool.poetry.group.tests.dependencies]
+pytest = "^8.2.0"
+pytest-cov = "^5.0.0"
+coverage = "^7.5.0"
+
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.6.0"
+mkdocs-material = "^9.5.21"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
